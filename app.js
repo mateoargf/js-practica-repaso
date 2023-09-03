@@ -59,7 +59,9 @@ let points = [ // An array with 2 elements.
 {x: 0, y: 0}, // Each element is an object.
 {x: 1, y: 1}
 ];
+console.log(points[points.length-1]) //{x: 1, y: 1}: the las element from the array of objects
 let data = { // An object with 2 properties
 trial1: [[1,2], [3,4]], // The value of each property is an array.
 trial2: [[2,3], [4,5]] // The elements of the arrays are arrays.
 };
+console.log(data.trial1[data.trial1.length-1]) //[3,4]: the las element from the array of arrays
