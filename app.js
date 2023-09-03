@@ -16,6 +16,10 @@ console.log(xy())
 console.log(condicional(2,3))
 console.log('hellor world!')
 
+// A variable is a symbolic name for a value.
+// Variables are declared with the let keyword:
+let x; // Declare a variable named x.
+
 // JavaScript supports several types of values
 x = 1; // Numbers.
 x = 0.01; // Numbers can be integers or reals.
@@ -26,7 +30,7 @@ x = false; // The other Boolean value.
 x = null; // Null is a special value that means "no value."
 x = undefined; // Undefined is another special value like null.
 
-
+console.log(x) //x = last value.
 
 // JavaScript's most important datatype is the object.
 // An object is a collection of name/value pairs, or a string to value map.
