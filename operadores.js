@@ -1,7 +1,7 @@
 // Arrays and objects can hold other arrays and objects:
 let points = [ // An array with 2 elements.
-{x: 0, y: 0}, // Each element is an object.
-{x: 1, y: 1}
+    { x: 0, y: 0 }, // Each element is an object.
+    { x: 1, y: 1 }
 ];
 // Operators act on values (the operands) to produce a new value.
 // Arithmetic operators are some of the simplest:
@@ -31,7 +31,7 @@ x >= y // => false: greater-than or equal
 "two" === "three" // => false: the two strings are different
 "two" > "three" // => true: "tw" is alphabetically greater than "th"
 false === (x > y) // => true: false is equal to false
-// Logical operators combine or invert boolean values
-(x === 2) && (y === 3) // => true: both comparisons are true. && is AND
-(x > 3) || (y < 3) // => false: neither comparison is true. || is OR
+    // Logical operators combine or invert boolean values
+    (x === 2) && (y === 3) // => true: both comparisons are true. && is AND
+        (x > 3) || (y < 3) // => false: neither comparison is true. || is OR
 !(x === y) // => true: ! inverts a boolean value
