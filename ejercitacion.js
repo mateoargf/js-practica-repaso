@@ -1,4 +1,7 @@
-console.log(1 < 2n) // => true
-console.log(2 > 1n )// => true
-console.log(0 == 0n) // => true
-console.log(0 === 0n) // => false: the === checks for type equality as well
+let name = 'Mateo'
+let s = 'hola, mi nombre es:' + ' ' + `${name}`
+let x = 'Ha sido un placer' + ' ' + `${name}`
+console.log(s)
+console.log(s.substring(1,4))
+console.log(x)
+console.log(x.length)
