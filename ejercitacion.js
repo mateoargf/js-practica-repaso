@@ -37,6 +37,8 @@ if(s.endsWith(suffix)) {
 }
 
 // Ejercicio 7: Dada una cadena s, reemplaza todas las vocales en la cadena con el carácter "#" y muestra la cadena resultante.
+let remplazar = s.replace(/[aeiouAEIOU]/g, '#')
+console.log(remplazar)
 
 // Ejercicio 8: Dada una cadena s, cuenta cuántas veces aparece la letra "l" en la cadena.
 
