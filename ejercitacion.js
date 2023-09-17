@@ -58,7 +58,7 @@ console.log(mayuscula)
 
 // console.log(encontrarPalabraMasLarga(s));
 
-const  encontrarPalabraMasLarga = (cadena) => {
+const encontrarPalabraMasLarga = (cadena) => {
     const palabras = cadena.split(/[,\s]+/g);
 
     if (palabras.length < 2) {
@@ -81,9 +81,9 @@ console.log(encontrarPalabraMasLarga(s));
 const reemplazarMM = (cadena) => {
     let palabras = ''
     for (let caracter of cadena) {
-        if(caracter===caracter.toLowerCase()) {
+        if (caracter === caracter.toLowerCase()) {
             palabras += caracter.toUpperCase()
-        }else {
+        } else {
             palabras += caracter.toLowerCase()
         }
     }
@@ -93,31 +93,40 @@ console.log(reemplazarMM(s))
 
 // Ejercicio 17: Dada una cadena s, verifica si contiene solo dígitos numéricos.
 const contieneNumeros = (cadena) => {
-    
-    for (let i=0;i<cadena.length;i++) {
+
+    for (let i = 0; i < cadena.length; i++) {
         const caracter = cadena.charAt(i)
-        if (caracter<'0' || caracter>'9') {
+        if (caracter < '0' || caracter > '9') {
             return `${cadena} no tiene solo números`
         }
     }
     return `${cadena} contiene solo números`
- } 
+}
 
- console.log(contieneNumeros(s))
+console.log(contieneNumeros(s))
 
 // Ejercicio 18: Dada una cadena s, elimina todos los caracteres no alfabéticos (como números y símbolos) de la cadena.
 const eliminarCaracteres = (cadena) => {
     let regex = /[^a-zA-Z]/g
 
-    for(caracter of cadena) {
-        if(caracter === regex) {
-            caracter.replace(regex,'')
-        }
-    }
-    return cadena
- } 
- console.log(eliminarCaracteres(s))
+    const nuevaCadena = cadena.replace(regex, '')
+    return nuevaCadena
+}
+console.log(eliminarCaracteres(s))
 
 // Ejercicio 19: Dada una cadena s, verifica si todas las palabras en la cadena comienzan con letra mayúscula.
+const verificarMayus = (cadena) => {
+  const palabras = cadena.split(' ')
+
+  for (const palabra of palabras) {
+    const primeraLetra = palabra.charAt(0)
+    if (primeraLetra !== primeraLetra.toUpperCase()) {
+        return `"${cadena}" no todas las palabras conmienzan con mayúscula`
+    } 
+  }
+  return `"${cadena}" todas las palabras comienzan con mayúscula`
+}
+
+console.log(verificarMayus(s))
 
 // Ejercicio 20: Dada una cadena s, verifica si es una URL válida (debe comenzar con "http://" o "https://").
