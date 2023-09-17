@@ -93,10 +93,30 @@ console.log(reemplazarMM(s))
 
 // Ejercicio 17: Dada una cadena s, verifica si contiene solo dígitos numéricos.
 const contieneNumeros = (cadena) => {
-             
+    
+    for (let i=0;i<cadena.length;i++) {
+        const caracter = cadena.charAt(i)
+        if (caracter<'0' || caracter>'9') {
+            return `${cadena} no tiene solo números`
+        }
+    }
+    return `${cadena} contiene solo números`
  } 
 
+ console.log(contieneNumeros(s))
+
 // Ejercicio 18: Dada una cadena s, elimina todos los caracteres no alfabéticos (como números y símbolos) de la cadena.
+const eliminarCaracteres = (cadena) => {
+    let regex = /[^a-zA-Z]/g
+
+    for(caracter of cadena) {
+        if(caracter === regex) {
+            caracter.replace(regex,'')
+        }
+    }
+    return cadena
+ } 
+ console.log(eliminarCaracteres(s))
 
 // Ejercicio 19: Dada una cadena s, verifica si todas las palabras en la cadena comienzan con letra mayúscula.
 
