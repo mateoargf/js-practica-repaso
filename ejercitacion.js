@@ -1,132 +1,73 @@
-let s = "Hello, world";
-// Ejercicio 11: Dada una cadena s, invierte la cadena de manera que la última letra se convierta en la primera, la penúltima en la segunda, y así sucesivamente. Por ejemplo, si s es "hello", el resultado debería ser "olleh".
-let invertir = ''
-for (let i = s.length - 1; i >= 0; i--) {
-    invertir += s[i]
+// Nivel Básico:
+// Calcula el valor absoluto de un número ingresado por el usuario utilizando Math.abs().
+const calculoValor = (numero) => {
+    return Math.abs(numero)
 }
-console.log(invertir)
-let invertida = s.split('').reverse().join('')
-console.log(invertida)
+console.log(calculoValor(-0.4))
 
-// Ejercicio 12: Dada una cadena s, verifica si es un palíndromo, es decir, si se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo, "racecar" es un palíndromo.
-let sLimpia = s.replace(/[,]/g, '')
-let invertidaDos = sLimpia.split('').reverse().join('')
-let check = sLimpia === invertidaDos ? 'palindromo' : 'no es palindromo'
-console.log(check)
-console.log(invertidaDos)
+// Redondea un número decimal ingresado por el usuario al entero más cercano utilizando Math.round().
+const redondeoDecimal = (numero) => {
+    return Math.round(numero)
+}
+console.log(redondeoDecimal(0.7))
 
-// Ejercicio 13: Dada una cadena s, cuenta cuántas palabras hay en la cadena. Puedes asumir que las palabras están separadas por espacios.
-let palabras = s.replace(/[,\s]+/g, ' ').trim().split(' ').length;
-console.log(palabras)
+// Calcula el valor de π utilizando Math.PI y muestra el resultado.
+const valorPI = () => {
+    return Math.PI
+}
+console.log(valorPI())
 
-// Ejercicio 14: Dada una cadena s, verifica si todas las letras en la cadena son mayúsculas.
-let mayuscula = s === s.toUpperCase()
-console.log(mayuscula)
+// Genera un número aleatorio entre 1 y 100 utilizando Math.random() y muestra el resultado.
+const numeroAleatorio = (numero) => {
+    return Math.random()
+}
+console.log(numeroAleatorio())
 
-// Ejercicio 15: Dada una cadena s, encuentra la palabra más larga en la cadena (la palabra con más caracteres).
-// const encontrarPalabraMasLarga = (cadena) => {
-//     // Dividimos la cadena en palabras utilizando una expresión regular que busca comas y espacios como delimitadores.
-//     const palabras = cadena.split(/[,\s]+/g);
+// Nivel Intermedio:
+// Pide al usuario que ingrese un número y calcula su raíz cuadrada utilizando Math.sqrt(). Asegúrate de manejar casos en los que el número sea negativo.
+const calculoRaiz = (numero) => {
+    return Math.sqrt(numero)
+}
+console.log(calculoRaiz(25))
 
-//     // Verificamos si hay al menos dos palabras en la cadena.
-//     if (palabras.length < 2) {
-//         return "La cadena no contiene al menos dos palabras.";
-//     }
+// Crea una función que tome dos números como argumentos y devuelva el número mayor utilizando Math.max().
+const devolverMayor = (num1, num2) => {
+    return Math.max(num1, num2)
+}
+console.log(devolverMayor(2, 5))
 
-//     // Inicializamos una variable llamada palabraMasLarga con la primera palabra.
-//     let palabraMasLarga = palabras[0];
+// Crea una función que tome un número decimal como argumento y lo redondee al número entero más grande utilizando Math.ceil().
+const redondearMayor = (decimal) => {
+    return Math.ceil(decimal)
+}
+console.log(redondearMayor(0.01))
 
-//     // Luego, recorremos las demás palabras en un bucle a partir de la segunda palabra (índice 1).
-//     for (let i = 1; i < palabras.length; i++) {
-//         // Comparamos la longitud de la palabra actual con la longitud de palabraMasLarga.
-//         // Si la palabra actual es más larga, actualizamos palabraMasLarga.
-//         if (palabras[i].length > palabraMasLarga.length) {
-//             palabraMasLarga = palabras[i];
-//         }
-//     }
+// Crea una función que genere un número entero aleatorio entre dos valores dados por el usuario utilizando Math.random() y la aritmética apropiada.
+const aleatorioEntreDos = (min, max) => {
+    let numeroX = Math.random()
+    console.log(numeroX)
+    let rango = max - min
+    let numeroEscalado = numeroX * rango
+    let enteroAleatorio = Math.round(numeroEscalado) + min
+    return enteroAleatorio
+}
+console.log(aleatorioEntreDos(2, 5))
 
-//     // Filtramos las palabras que tienen la misma longitud que palabraMasLarga.
-//     const palabrasMasLargas = palabras.filter(palabra => palabra.length === palabraMasLarga.length);
-
-//     // Finalmente, dependiendo de si hay una o varias palabras más largas, generamos el mensaje adecuado.
-//     if (palabrasMasLargas.length > 1) {
-//         return `Las palabras más largas son "${palabrasMasLargas.join('", "')}" con ${palabraMasLarga.length} caracteres cada una.`;
-//     } else {
-//         return `La palabra más larga es "${palabraMasLarga}" con ${palabraMasLarga.length} caracteres.`;
-//     }
-// }
-
-// console.log(encontrarPalabraMasLarga(s));
-
-const encontrarPalabraMasLarga = (cadena) => {
-    const palabras = cadena.split(/[,\s]+/g);
-
-    if (palabras.length < 2) {
-        return "La cadena no contiene al menos dos palabras.";
+// Nivel Avanzado:
+// Crea una función que calcule el factorial de un número entero no negativo utilizando un bucle y el objeto Math.
+const factorialEnteroNoNegativo = (numeros) => {
+    let numeroPositivo = Math.abs(Math.round(numeros))
+    let factorial = 1
+    for(let i = 1; i <=numeroPositivo; i++) {
+        factorial *= i
     }
-
-    const longitudMaxima = Math.max(...palabras.map(palabra => palabra.length));
-    console.log(longitudMaxima)
-    const palabrasMasLargas = palabras.filter(palabra => palabra.length === longitudMaxima);
-    console.log(palabrasMasLargas)
-
-    return palabrasMasLargas.length > 1
-        ? `Las palabras más largas son "${palabrasMasLargas.join('", "')}" con ${longitudMaxima} caracteres cada una.`
-        : `La palabra más larga es "${palabrasMasLargas[0]}" con ${longitudMaxima} caracteres.`;
+    return factorial
 }
-encontrarPalabraMasLarga(s)
-console.log(encontrarPalabraMasLarga(s));
+console.log(factorialEnteroNoNegativo(-5))
 
-// Ejercicio 16: Dada una cadena s, reemplaza todas las letras minúsculas con letras mayúsculas y todas las letras mayúsculas con letras minúsculas.
-const reemplazarMM = (cadena) => {
-    let palabras = ''
-    for (let caracter of cadena) {
-        if (caracter === caracter.toLowerCase()) {
-            palabras += caracter.toUpperCase()
-        } else {
-            palabras += caracter.toLowerCase()
-        }
-    }
-    return palabras
-}
-console.log(reemplazarMM(s))
+// Implementa una función que genere un número aleatorio entre dos valores dados por el usuario, pero que sea un múltiplo de un tercer número ingresado por el usuario. Utiliza Math.floor() para asegurarte de que el resultado sea un múltiplo.
 
-// Ejercicio 17: Dada una cadena s, verifica si contiene solo dígitos numéricos.
-const contieneNumeros = (cadena) => {
 
-    for (let i = 0; i < cadena.length; i++) {
-        const caracter = cadena.charAt(i)
-        if (caracter < '0' || caracter > '9') {
-            return `${cadena} no tiene solo números`
-        }
-    }
-    return `${cadena} contiene solo números`
-}
+// Crea una función que calcule el valor absoluto de la diferencia entre dos fechas dadas en milisegundos. Puedes utilizar el objeto Date junto con Math.abs().
 
-console.log(contieneNumeros(s))
-
-// Ejercicio 18: Dada una cadena s, elimina todos los caracteres no alfabéticos (como números y símbolos) de la cadena.
-const eliminarCaracteres = (cadena) => {
-    let regex = /[^a-zA-Z]/g
-
-    const nuevaCadena = cadena.replace(regex, '')
-    return nuevaCadena
-}
-console.log(eliminarCaracteres(s))
-
-// Ejercicio 19: Dada una cadena s, verifica si todas las palabras en la cadena comienzan con letra mayúscula.
-const verificarMayus = (cadena) => {
-  const palabras = cadena.split(' ')
-
-  for (const palabra of palabras) {
-    const primeraLetra = palabra.charAt(0)
-    if (primeraLetra !== primeraLetra.toUpperCase()) {
-        return `"${cadena}" no todas las palabras conmienzan con mayúscula`
-    } 
-  }
-  return `"${cadena}" todas las palabras comienzan con mayúscula`
-}
-
-console.log(verificarMayus(s))
-
-// Ejercicio 20: Dada una cadena s, verifica si es una URL válida (debe comenzar con "http://" o "https://").
+// Crea un programa que calcule la distancia entre dos coordenadas en un plano cartesiano utilizando la fórmula de la distancia euclidiana y el objeto Math.
