@@ -58,7 +58,7 @@ console.log(aleatorioEntreDos(2, 5))
 const factorialEnteroNoNegativo = (numeros) => {
     let numeroPositivo = Math.abs(Math.round(numeros))
     let factorial = 1
-    for(let i = 1; i <=numeroPositivo; i++) {
+    for (let i = 1; i <= numeroPositivo; i++) {
         factorial *= i
     }
     return factorial
@@ -66,8 +66,28 @@ const factorialEnteroNoNegativo = (numeros) => {
 console.log(factorialEnteroNoNegativo(-5))
 
 // Implementa una función que genere un número aleatorio entre dos valores dados por el usuario, pero que sea un múltiplo de un tercer número ingresado por el usuario. Utiliza Math.floor() para asegurarte de que el resultado sea un múltiplo.
-
+const aleatorioConMultiplo = (min, max, multiplo) => {
+    let random = Math.floor(Math.random() * (max - min + 1) + min)
+    let multiploCercano = Math.round(random / multiplo) * multiplo
+    return multiploCercano
+}
+console.log(aleatorioConMultiplo(5, 25, 5))
 
 // Crea una función que calcule el valor absoluto de la diferencia entre dos fechas dadas en milisegundos. Puedes utilizar el objeto Date junto con Math.abs().
+const diferenciaEntreFechas = (a, b) => {
+    const date1 = new Date(a)
+    const date2 = new Date(b)
+    const difrenciaMilisegundos = Math.abs(date1 - date2)
+    return difrenciaMilisegundos
+}
+console.log(diferenciaEntreFechas(Date.now(), 86400000))
 
 // Crea un programa que calcule la distancia entre dos coordenadas en un plano cartesiano utilizando la fórmula de la distancia euclidiana y el objeto Math.
+const distanciaCoordenadas = (x1, y1, x2, y2) => {
+    let diferenciaX = x2 - x1
+    let diferenciaY = y2 - y1
+    
+   let distancia = Math.sqrt(Math.pow(diferenciaX,2)+Math.pow(diferenciaY,2))
+   return distancia
+}
+console.log(distanciaCoordenadas(2, 6, 5, -4))
